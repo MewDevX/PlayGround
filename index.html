@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>العيون | منظومة الأدوات الحية</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👁</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="noise"></canvas>
+<div class="scanlines"></div>
+
+<header class="topbar">
+  <div class="logo"><span class="logo-eye">◉</span> المَنظُومَة <em>EYES SYSTEM</em></div>
+  <nav>
+    <button class="nav-btn active" data-goto="osint">قسم OSINT</button>
+    <button class="nav-btn" data-goto="crypto">قسم التشفير</button>
+    <button class="nav-btn" data-goto="net">قسم الشبكة</button>
+    <button class="nav-btn" data-goto="about">الفلسفة</button>
+  </nav>
+</header>
+
+<main>
+  <!-- HUB HERO -->
+  <section class="hero">
+    <p class="hero-kicker">نظام أدوات بهويات بصرية حية — ليس Dashboard تقليدي</p>
+    <h1>كل قسم <span>كائن حي</span> بتصميم يعبر عن وظيفته</h1>
+    <p class="hero-sub">قسم المراقبة عيون تراقبك. قسم التشفير خزنة مشفرة. قسم الشبكة نبض حي. اختر قسماً لتدخله.</p>
+  </section>
+
+  <!-- ============ OSINT SECTION ============ -->
+  <section id="sec-osint" class="zone osint-zone active-zone">
+    <div class="osint-head">
+      <div class="live-badge"><span class="dot"></span> بث مراقبة حي — 6 عيون نشطة</div>
+      <p class="omen">«إن كنت في البيت، فهذا لا يعني أنك محمي من العيون.»</p>
+      <h2>قسم <span class="red">OSINT</span> — المراقبة المفتوحة</h2>
+      <p class="hint">حرّك الماوس — البؤبؤ يتبعك. كل عين أداة. اضغط على عين ليركّز عليها النظام ويُغلق البقية.</p>
+    </div>
+
+    <div id="eyes" class="eyes">
+      <!-- eyes injected by JS -->
+    </div>
+
+    <div class="eyes-controls">
+      <button id="resetEyes" class="ghost-btn hidden">⟲ إيقاظ كل العيون</button>
+    </div>
+
+    <!-- Cinematic stage -->
+    <div id="stage-wrap" class="stage-wrap hidden">
+      <div class="stage-sweep"></div>
+      <div class="stage-top">
+        <span id="stage-code">EYE_00</span>
+        <span class="rec">● REC</span>
+        <button id="stageClose">✕ إغلاق العين</button>
+      </div>
+      <h3 id="stage-title" class="stage-title"></h3>
+      <p id="stage-desc" class="stage-desc"></p>
+      <div id="stage" class="stage"></div>
+    </div>
+  </section>
+
+  <!-- ============ CRYPTO SECTION (different identity: vault) ============ -->
+  <section id="sec-crypto" class="zone crypto-zone">
+    <div class="crypto-inner">
+      <p class="omen vault-omen">«هنا لا عيون… هنا أقفال.»</p>
+      <h2>قسم التشفير — <span>الخزنة</span></h2>
+      <p class="hint">هوية بصرية مختلفة تماماً: نحاس، تروس، عجلة تشفير دوّارة. أدخل نصاً وشفره.</p>
+      <div class="vault">
+        <div class="dial" id="dial">◈</div>
+        <textarea id="cryptoIn" placeholder="اكتب النص هنا..."></textarea>
+        <div class="row">
+          <select id="cryptoMode">
+            <option value="base64">Base64</option>
+            <option value="caesar">قيصر +3</option>
+            <option value="rot13">ROT13</option>
+            <option value="reverse">قلب النص</option>
+          </select>
+          <button id="cryptoGo">تشفير / فك</button>
+          <button id="cryptoSwap">فك Base64</button>
+        </div>
+        <pre id="cryptoOut" class="vault-out">— النتيجة تظهر هنا —</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ NETWORK SECTION (different identity: pulse) ============ -->
+  <section id="sec-net" class="zone net-zone">
+    <div class="net-inner">
+      <p class="omen net-omen">«كل نبضة حزمة… وكل حزمة أثر.»</p>
+      <h2>قسم الشبكة — <span>النبض الحي</span></h2>
+      <p class="hint">هوية طرفية خضراء نابضة. حاسبة Subnet فورية تعمل محلياً.</p>
+      <div class="terminal">
+        <div class="term-bar"><span></span><span></span><span></span> net-pulse — live</div>
+        <div class="term-body">
+          <label>IP / CIDR — مثال: 192.168.1.10/24</label>
+          <div class="row">
+            <input id="cidrIn" value="192.168.1.10/24" dir="ltr" style="text-align:left">
+            <button id="cidrGo">احسب</button>
+          </div>
+          <pre id="cidrOut">...</pre>
+          <div class="pulse-line"><div class="pulse"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PHILOSOPHY ============ -->
+  <section id="sec-about" class="zone about-zone">
+    <h2>الفلسفة: تجربة لكل وظيفة</h2>
+    <div class="cards">
+      <div><b>OSINT = عيون</b><p>مراقبة، رمش، تركيز. الأداة تُفتح سينمائياً خطوة بخطوة.</p></div>
+      <div><b>تشفير = خزنة</b><p>نحاس وتروس وعجلات. إحساس بالثقل والسرية.</p></div>
+      <div><b>شبكة = نبض</b><p>طرفية خضراء ونبض حي وحزم تعبر.</p></div>
+    </div>
+    <p class="warn">تنبيه: أدوات OSINT هنا لأغراض البحث المشروع فقط. لا تُستخدم لجمع بيانات أشخاص دون وجه حق. النتائج إرشادية وتوجهك لأدوات عامة.</p>
+  </section>
+</main>
+
+<footer>صُمم كتجربة بصرية حية — OSINT بعيون ثلاثية الأبعاد ترمش وتتبعك.</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
