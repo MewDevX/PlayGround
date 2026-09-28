@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="description" content="An interactive visual environment. No subject." />
+    <meta name="theme-color" content="#E8E5DD" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23E8E5DD'/%3E%3Crect x='6' y='15' width='20' height='2' fill='%23191712'/%3E%3Crect x='22' y='11' width='4' height='4' fill='%23BC3F16'/%3E%3C/svg%3E" />
+    <title>FLD — 01</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a class="skip" href="#instrument">Skip to instrument</a>
+
+    <div id="veil" aria-hidden="true"><span></span></div>
+
+    <canvas id="gl" aria-hidden="true"></canvas>
+    <canvas id="flat" aria-hidden="true" hidden></canvas>
+    <div id="vignette" aria-hidden="true"></div>
+    <div id="grain" aria-hidden="true"></div>
+
+    <!-- fixed chrome -->
+    <header class="chrome chrome-top">
+      <p class="mono mark" aria-hidden="true">FLD — 01</p>
+      <p class="mono mark right" aria-hidden="true"><span id="phaseLabel">01 / 05</span></p>
+    </header>
+    <div class="rule rule-top" aria-hidden="true"></div>
+    <div class="rule rule-bottom" aria-hidden="true"></div>
+    <footer class="chrome chrome-bottom">
+      <p class="mono mark" aria-hidden="true"><span id="coordLabel">0.00 / 0.00</span></p>
+      <nav class="stepper" aria-label="Composition states">
+        <button id="stepBack" type="button" aria-label="Previous state">−</button>
+        <span class="mono" id="stepIndex" aria-hidden="true">01</span>
+        <button id="stepFwd" type="button" aria-label="Next state">+</button>
+      </nav>
+      <p class="mono mark right" aria-hidden="true">60 · STILL</p>
+    </footer>
+    <div id="progress" aria-hidden="true"><i></i></div>
+    <div class="cross c1" aria-hidden="true">+</div>
+    <div class="cross c2" aria-hidden="true">+</div>
+
+    <main id="instrument">
+      <h1 class="sr">An interactive visual environment in five states</h1>
+
+      <!-- sticky composition -->
+      <div id="stage" aria-hidden="true">
+        <p class="mega" id="megaA">00</p>
+        <p class="mega ghost" id="megaB">00</p>
+        <p class="frag f-tnsn" id="fragTnsn">TNSN</p>
+        <p class="frag f-fld" id="fragFld">FLD</p>
+        <p class="frag f-num" id="fragNum">02</p>
+        <p class="frag f-dash" id="fragDash">—</p>
+        <p class="vert" id="vertMark">04 · 01</p>
+        <div class="slit" id="slit"><i></i></div>
+        <div class="square" id="square"></div>
+        <p class="mono endmark" id="endmark">— 05</p>
+      </div>
+
+      <!-- scroll body: one evolving instrument, five states -->
+      <div id="scrollbody">
+        <section class="state" data-state="0" aria-label="State 1 of 5">
+          <span class="sr">State one. A flat field of lines. A cropped numeral at the edge.</span>
+        </section>
+        <section class="state" data-state="1" aria-label="State 2 of 5">
+          <span class="sr">State two. The field folds into a ridge.</span>
+        </section>
+        <section class="state" data-state="2" aria-label="State 3 of 5">
+          <span class="sr">State three. Two masses cross the field. Type moves through depth.</span>
+        </section>
+        <section class="state" data-state="3" aria-label="State 4 of 5">
+          <span class="sr">State four. The composition collapses toward a single line.</span>
+        </section>
+        <section class="state" data-state="4" aria-label="State 5 of 5">
+          <span class="sr">State five. Reduction. A quiet resting point.</span>
+        </section>
+      </div>
+    </main>
+
+    <noscript>
+      <div class="noscript">
+        <p>FLD — 01</p>
+        <p>A field of lines, a ridge, two masses, a slit, stillness.</p>
+      </div>
+    </noscript>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
